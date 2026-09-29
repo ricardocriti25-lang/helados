@@ -1,0 +1,1190 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>Helados Donamy</title>
+
+    <style>
+
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background: #fffaf7;
+            color: #4b2318;
+        }
+
+
+        /* =========================
+           ENCABEZADO
+        ========================= */
+
+        header {
+            width: 100%;
+            background: white;
+            padding: 15px 7%;
+
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+
+            border-bottom: 4px solid #ff7eaa;
+        }
+
+
+        /* LOGO */
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 14px;
+        }
+
+        .logo img {
+            width: 90px;
+            height: 90px;
+
+            object-fit: cover;
+            border-radius: 50%;
+
+            transition: transform 0.3s ease;
+        }
+
+        .logo img:hover {
+            transform: scale(1.08);
+        }
+
+        .nombre-logo {
+            display: flex;
+            align-items: center;
+            gap: 7px;
+        }
+
+        .nombre-logo span {
+            font-size: 30px;
+            font-weight: bold;
+            color: #ed3f78;
+        }
+
+        .nombre-logo strong {
+            font-size: 30px;
+            color: #5b281d;
+        }
+
+
+        /* =========================
+           MENÚ
+        ========================= */
+
+        nav ul {
+            list-style: none;
+
+            display: flex;
+            align-items: center;
+            gap: 30px;
+
+            margin: 0;
+            padding: 0;
+        }
+
+        nav button {
+            background: none;
+            border: none;
+
+            color: #4b2318;
+
+            font-size: 17px;
+            font-weight: bold;
+            font-family: Arial, sans-serif;
+
+            cursor: pointer;
+
+            transition: color 0.3s ease;
+        }
+
+        nav button:hover {
+            color: #ed3f78;
+        }
+
+        nav button.activo {
+            color: #ed3f78;
+        }
+
+
+        /* =========================
+           PÁGINAS
+        ========================= */
+
+        .pagina {
+            display: none;
+        }
+
+        .pagina.activa {
+            display: block;
+        }
+
+
+        /* =========================
+           INICIO
+        ========================= */
+
+        .principal {
+            width: 100%;
+
+            min-height: calc(100vh - 124px);
+
+            background: #ffd0df;
+
+            padding: 55px 8%;
+
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+
+            gap: 50px;
+        }
+
+        .principal .texto {
+            flex: 1;
+        }
+
+        .principal h1 {
+            font-size: 52px;
+            margin: 0 0 12px;
+        }
+
+        .principal h2 {
+            color: #e93473;
+            font-size: 25px;
+        }
+
+        .principal p {
+            font-size: 18px;
+            line-height: 1.5;
+        }
+
+        .principal img {
+            width: 48%;
+            max-height: 430px;
+
+            object-fit: cover;
+
+            border-radius: 25px;
+
+            transition:
+                transform 0.4s ease,
+                box-shadow 0.4s ease;
+        }
+
+        .principal img:hover {
+            transform: scale(1.04);
+
+            box-shadow:
+                0 15px 30px #00000035;
+        }
+
+
+        /* =========================
+           PRODUCTOS
+        ========================= */
+
+        .productos {
+            min-height: calc(100vh - 124px);
+
+            padding: 55px 7% 70px;
+
+            text-align: center;
+
+            background: #fffaf7;
+        }
+
+        .productos h1 {
+            font-size: 45px;
+            margin: 0 0 10px;
+        }
+
+        .productos > p {
+            font-size: 18px;
+            margin-bottom: 35px;
+        }
+
+
+        /* TARJETAS */
+
+        .tarjetas {
+            display: grid;
+
+            grid-template-columns:
+                repeat(4, 1fr);
+
+            gap: 25px;
+        }
+
+        .tarjeta {
+            background: white;
+
+            border-radius: 18px;
+
+            overflow: hidden;
+
+            text-align: left;
+
+            box-shadow:
+                0 5px 15px #00000018;
+
+            transition:
+                transform 0.3s ease,
+                box-shadow 0.3s ease;
+        }
+
+        .tarjeta:hover {
+            transform: translateY(-8px);
+
+            box-shadow:
+                0 15px 30px #00000025;
+        }
+
+        .tarjeta img {
+            width: 100%;
+            height: 230px;
+
+            object-fit: cover;
+
+            display: block;
+
+            cursor: pointer;
+
+            transition: transform 0.3s ease;
+        }
+
+        .tarjeta:hover img {
+            transform: scale(1.04);
+        }
+
+        .tarjeta h2 {
+            margin: 18px 18px 8px;
+
+            font-size: 23px;
+        }
+
+        .tarjeta p {
+            margin: 0 18px 22px;
+
+            line-height: 1.5;
+        }
+
+
+        /* =========================
+           CONTACTO
+        ========================= */
+
+        .contacto {
+            min-height: calc(100vh - 124px);
+
+            background: #ffd8e4;
+
+            padding: 65px 8%;
+
+            text-align: center;
+        }
+
+        .contacto h1 {
+            font-size: 45px;
+
+            margin: 0 0 10px;
+        }
+
+        .contacto > p {
+            font-size: 19px;
+
+            margin-bottom: 50px;
+        }
+
+        .datos {
+            display: grid;
+
+            grid-template-columns:
+                repeat(4, 1fr);
+
+            gap: 30px;
+        }
+
+        .dato {
+            padding: 25px 15px;
+        }
+
+        .dato h2 {
+            font-size: 23px;
+
+            margin-bottom: 15px;
+        }
+
+        .dato p {
+            font-size: 17px;
+
+            line-height: 1.5;
+        }
+
+
+        /* =========================
+           VISOR DE PRODUCTOS
+        ========================= */
+
+        .visor {
+            display: none;
+
+            position: fixed;
+
+            top: 0;
+            left: 0;
+
+            width: 100%;
+            height: 100%;
+
+            background:
+                rgba(0, 0, 0, 0.50);
+
+            justify-content: center;
+            align-items: center;
+
+            z-index: 1000;
+        }
+
+        .visor.abierto {
+            display: flex;
+        }
+
+        .visor-contenido {
+            position: relative;
+
+            background: white;
+
+            padding: 12px;
+
+            border-radius: 18px;
+
+            box-shadow:
+                0 15px 40px #00000060;
+        }
+
+        .visor-contenido img {
+            display: block;
+
+            max-width: 500px;
+            max-height: 65vh;
+
+            width: auto;
+            height: auto;
+
+            border-radius: 12px;
+        }
+
+
+        /* BOTÓN X */
+
+        .cerrar {
+            position: absolute;
+
+            top: -16px;
+            right: -16px;
+
+            width: 40px;
+            height: 40px;
+
+            border: none;
+            border-radius: 50%;
+
+            background: #ed3f78;
+            color: white;
+
+            font-size: 27px;
+            font-weight: bold;
+
+            cursor: pointer;
+        }
+
+        .cerrar:hover {
+            background: #c92c61;
+        }
+
+
+        /* =========================
+           TABLET
+        ========================= */
+
+        @media(max-width: 900px) {
+
+            header {
+                flex-direction: column;
+
+                gap: 18px;
+            }
+
+            .principal {
+                flex-direction: column;
+
+                text-align: center;
+
+                min-height: auto;
+            }
+
+            .principal img {
+                width: 100%;
+            }
+
+            .tarjetas {
+                grid-template-columns:
+                    1fr 1fr;
+            }
+
+            .datos {
+                grid-template-columns:
+                    1fr 1fr;
+            }
+
+        }
+
+
+        /* =========================
+           CELULAR
+        ========================= */
+
+        @media(max-width: 550px) {
+
+            header {
+                padding: 12px 5%;
+            }
+
+            .logo img {
+                width: 70px;
+                height: 70px;
+            }
+
+            .nombre-logo span,
+            .nombre-logo strong {
+                font-size: 23px;
+            }
+
+            nav ul {
+                gap: 10px;
+            }
+
+            nav button {
+                font-size: 14px;
+
+                padding: 5px;
+            }
+
+            .principal {
+                padding: 40px 6%;
+            }
+
+            .principal h1 {
+                font-size: 38px;
+            }
+
+            .principal h2 {
+                font-size: 21px;
+            }
+
+            .principal p {
+                font-size: 16px;
+            }
+
+            .principal img {
+                width: 100%;
+            }
+
+
+            /* PRODUCTOS CELULAR */
+
+            .productos {
+                padding: 40px 6%;
+            }
+
+            .productos h1 {
+                font-size: 35px;
+            }
+
+            .tarjetas {
+                grid-template-columns: 1fr;
+            }
+
+
+            /* CONTACTO CELULAR */
+
+            .contacto {
+                padding: 45px 6%;
+            }
+
+            .contacto h1 {
+                font-size: 35px;
+            }
+
+            .datos {
+                grid-template-columns: 1fr;
+
+                gap: 10px;
+            }
+
+
+            /* VISOR CELULAR */
+
+            .visor-contenido img {
+                max-width: 85vw;
+
+                max-height: 60vh;
+            }
+
+        }
+
+    </style>
+
+</head>
+
+
+<body>
+
+
+<!-- ==========================================
+     ENCABEZADO
+========================================== -->
+
+<header>
+
+
+    <div class="logo">
+
+        <img
+            src="img/logo.png"
+            alt="Logo Helados Donamy">
+
+
+        <div class="nombre-logo">
+
+            <span>
+                Helados
+            </span>
+
+            <strong>
+                Donamy
+            </strong>
+
+        </div>
+
+    </div>
+
+
+
+    <!-- MENÚ -->
+
+    <nav>
+
+        <ul>
+
+            <li>
+
+                <button
+                    id="btnInicio"
+                    class="activo"
+                    onclick="mostrarPagina('inicio')">
+
+                    Inicio
+
+                </button>
+
+            </li>
+
+
+            <li>
+
+                <button
+                    id="btnProductos"
+                    onclick="mostrarPagina('productos')">
+
+                    Productos
+
+                </button>
+
+            </li>
+
+
+            <li>
+
+                <button
+                    id="btnContacto"
+                    onclick="mostrarPagina('contacto')">
+
+                    Contacto
+
+                </button>
+
+            </li>
+
+        </ul>
+
+    </nav>
+
+
+</header>
+
+
+
+<!-- ==========================================
+     INICIO
+========================================== -->
+
+<main
+    id="inicio"
+    class="pagina activa">
+
+
+    <section class="principal">
+
+
+        <div class="texto">
+
+
+            <p>
+                Bienvenidos a
+            </p>
+
+
+            <h1>
+                Helados Donamy
+            </h1>
+
+
+            <h2>
+                Paletas y helados que endulzan tu día
+            </h2>
+
+
+            <p>
+
+                Disfruta de nuestra gran variedad de
+                paletas de crema, elaboradas en
+                diferentes sabores y con ingredientes
+                de calidad.
+
+            </p>
+
+
+        </div>
+
+
+
+        <img
+            src="img/paletas_crema1.png"
+            alt="Paletas de Helados Donamy">
+
+
+    </section>
+
+
+</main>
+
+
+
+<!-- ==========================================
+     PRODUCTOS
+========================================== -->
+
+<main
+    id="productos"
+    class="pagina">
+
+
+    <section class="productos">
+
+
+        <h1>
+            Nuestros productos
+        </h1>
+
+
+        <p>
+            Conoce algunos de los sabores y productos
+            que tenemos en Helados Donamy.
+        </p>
+
+
+
+        <div class="tarjetas">
+
+
+            <!-- =========================
+                 PALETAS DE CREMA
+            ========================== -->
+
+            <div class="tarjeta">
+
+
+                <img
+                    src="img/paletas_crema2.png"
+                    alt="Paletas de crema"
+                    onclick="abrirImagen(this.src)">
+
+
+                <h2>
+                    Paletas de crema
+                </h2>
+
+
+                <p>
+                    Paletas elaboradas con crema de
+                    leche en diferentes sabores y
+                    combinaciones.
+                </p>
+
+
+            </div>
+
+
+
+            <!-- =========================
+                 PALETAS ESPECIALES
+            ========================== -->
+
+            <div class="tarjeta">
+
+
+                <img
+                    src="img/paleta_especial.png"
+                    alt="Paletas especiales"
+                    onclick="abrirImagen(this.src)">
+
+
+                <h2>
+                    Paletas especiales
+                </h2>
+
+
+                <p>
+                    Diferentes combinaciones de sabores
+                    para disfrutar algo especial.
+                </p>
+
+
+            </div>
+
+
+
+            <!-- =========================
+                 SÁNDWICHES
+            ========================== -->
+
+            <div class="tarjeta">
+
+
+                <img
+                    src="img/sandwiches.png"
+                    alt="Sándwiches de helado"
+                    onclick="abrirImagen(this.src)">
+
+
+                <h2>
+                    Sándwiches de helado
+                </h2>
+
+
+                <p>
+                    Helado cremoso entre galletas,
+                    disponible en diferentes sabores.
+                </p>
+
+
+            </div>
+
+
+
+            <!-- =========================
+                 MÁS SABORES
+            ========================== -->
+
+            <div class="tarjeta">
+
+
+                <img
+                    src="img/mas_sabores.png"
+                    alt="Más sabores"
+                    onclick="abrirImagen(this.src)">
+
+
+                <h2>
+                    Más sabores
+                </h2>
+
+
+                <p>
+                    Contamos con diferentes opciones
+                    para que puedas elegir tu favorita.
+                </p>
+
+
+            </div>
+
+
+
+            <!-- =========================
+                 VASITOS DE HELADO
+            ========================== -->
+
+            <div class="tarjeta">
+
+
+                <img
+                    src="img/vasitos.png"
+                    alt="Vasitos de helado"
+                    onclick="abrirImagen(this.src)">
+
+
+                <h2>
+                    Vasitos de helado
+                </h2>
+
+
+                <p>
+                    Deliciosos vasitos con diferentes
+                    capas y combinaciones de sabores.
+                </p>
+
+
+            </div>
+
+
+
+            <!-- =========================
+                 PALETA DE COLORES
+            ========================== -->
+
+            <div class="tarjeta">
+
+
+                <img
+                    src="img/paleta_colores.png"
+                    alt="Paleta de colores"
+                    onclick="abrirImagen(this.src)">
+
+
+                <h2>
+                    Paletas de colores
+                </h2>
+
+
+                <p>
+                    Paletas refrescantes con diferentes
+                    colores y sabores para disfrutar.
+                </p>
+
+
+            </div>
+
+
+
+            <!-- =========================
+                 HELADOS EN BOTE
+            ========================== -->
+
+            <div class="tarjeta">
+
+
+                <img
+                    src="img/helados_bote.png"
+                    alt="Helados en bote"
+                    onclick="abrirImagen(this.src)">
+
+
+                <h2>
+                    Helados en bote
+                </h2>
+
+
+                <p>
+                    Helados cremosos disponibles en
+                    distintos sabores para elegir.
+                </p>
+
+
+            </div>
+
+
+        </div>
+
+
+    </section>
+
+
+</main>
+
+
+
+<!-- ==========================================
+     CONTACTO
+========================================== -->
+
+<main
+    id="contacto"
+    class="pagina">
+
+
+    <section class="contacto">
+
+
+        <h1>
+            Contacto rápido
+        </h1>
+
+
+        <p>
+            ¡Te esperamos en Helados Donamy!
+        </p>
+
+
+
+        <div class="datos">
+
+
+            <div class="dato">
+
+                <h2>
+                    Dirección
+                </h2>
+
+                <p>
+                    Próximamente
+                </p>
+
+            </div>
+
+
+
+            <div class="dato">
+
+                <h2>
+                    Horario
+                </h2>
+
+                <p>
+                    Consulta nuestro horario de atención
+                </p>
+
+            </div>
+
+
+
+            <div class="dato">
+
+                <h2>
+                    Teléfono
+                </h2>
+
+                <p>
+                    Próximamente
+                </p>
+
+            </div>
+
+
+
+            <div class="dato">
+
+                <h2>
+                    Redes sociales
+                </h2>
+
+                <p>
+                    Facebook · Próximamente en más redes
+                </p>
+
+            </div>
+
+
+        </div>
+
+
+    </section>
+
+
+</main>
+
+
+
+<!-- ==========================================
+     VISOR PARA LAS FOTOS
+========================================== -->
+
+<div
+    class="visor"
+    id="visor"
+    onclick="cerrarFondo(event)">
+
+
+    <div class="visor-contenido">
+
+
+        <button
+            class="cerrar"
+            onclick="cerrarImagen()">
+
+            ×
+
+        </button>
+
+
+        <img
+            id="imagenGrande"
+            src=""
+            alt="Producto Helados Donamy">
+
+
+    </div>
+
+
+</div>
+
+
+
+<!-- ==========================================
+     JAVASCRIPT
+========================================== -->
+
+<script>
+
+
+    /* MOSTRAR LA SECCIÓN SELECCIONADA */
+
+    function mostrarPagina(pagina) {
+
+
+        document
+            .querySelectorAll(".pagina")
+            .forEach(function(seccion) {
+
+                seccion.classList.remove("activa");
+
+            });
+
+
+        document
+            .getElementById(pagina)
+            .classList.add("activa");
+
+
+
+        /* QUITAR COLOR DEL MENÚ */
+
+        document
+            .querySelectorAll("nav button")
+            .forEach(function(boton) {
+
+                boton.classList.remove("activo");
+
+            });
+
+
+
+        /* MARCAR LA OPCIÓN ACTUAL */
+
+        if (pagina === "inicio") {
+
+            document
+                .getElementById("btnInicio")
+                .classList.add("activo");
+
+        }
+
+
+        if (pagina === "productos") {
+
+            document
+                .getElementById("btnProductos")
+                .classList.add("activo");
+
+        }
+
+
+        if (pagina === "contacto") {
+
+            document
+                .getElementById("btnContacto")
+                .classList.add("activo");
+
+        }
+
+
+
+        /* REGRESAR ARRIBA */
+
+        window.scrollTo({
+            top: 0,
+            behavior: "smooth"
+        });
+
+    }
+
+
+
+    /* ABRIR UNA FOTO */
+
+    function abrirImagen(imagen) {
+
+
+        document
+            .getElementById("imagenGrande")
+            .src = imagen;
+
+
+        document
+            .getElementById("visor")
+            .classList.add("abierto");
+
+
+    }
+
+
+
+    /* CERRAR LA FOTO */
+
+    function cerrarImagen() {
+
+
+        document
+            .getElementById("visor")
+            .classList.remove("abierto");
+
+
+    }
+
+
+
+    /* CERRAR PICANDO FUERA DE LA FOTO */
+
+    function cerrarFondo(evento) {
+
+
+        if (evento.target.id === "visor") {
+
+            cerrarImagen();
+
+        }
+
+
+    }
+
+
+</script>
+
+
+</body>
+
+</html>

@@ -1,0 +1,321 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Productos - Helados Donamy</title>
+
+    <style>
+
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background: #fffaf7;
+            color: #4b2318;
+        }
+
+        /* ENCABEZADO */
+
+        header {
+            width: 100%;
+            background: white;
+            padding: 15px 7%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom: 4px solid #ff7eaa;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 14px;
+        }
+
+        .logo img {
+            width: 90px;
+            height: 90px;
+            object-fit: cover;
+            border-radius: 50%;
+        }
+
+        .nombre-logo {
+            display: flex;
+            align-items: center;
+            gap: 7px;
+        }
+
+        .nombre-logo span {
+            font-size: 30px;
+            font-weight: bold;
+            color: #ed3f78;
+        }
+
+        .nombre-logo strong {
+            font-size: 30px;
+            color: #5b281d;
+        }
+
+        /* MENÚ */
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            gap: 30px;
+            margin: 0;
+            padding: 0;
+        }
+
+        nav a {
+            text-decoration: none;
+            color: #4b2318;
+            font-size: 17px;
+            font-weight: bold;
+        }
+
+        nav a:hover {
+            color: #ed3f78;
+        }
+
+        /* PRODUCTOS */
+
+        .productos {
+            padding: 55px 7%;
+            text-align: center;
+        }
+
+        .productos h1 {
+            font-size: 45px;
+            margin: 0 0 10px;
+        }
+
+        .productos > p {
+            font-size: 18px;
+            margin-bottom: 35px;
+        }
+
+        .tarjetas {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 25px;
+        }
+
+        .tarjeta {
+            background: white;
+            border-radius: 18px;
+            overflow: hidden;
+            text-align: left;
+            box-shadow: 0 5px 15px #00000018;
+            transition: 0.3s;
+        }
+
+        .tarjeta:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 15px 30px #00000025;
+        }
+
+        .tarjeta img {
+            width: 100%;
+            height: 230px;
+            object-fit: cover;
+            transition: 0.3s;
+        }
+
+        .tarjeta:hover img {
+            transform: scale(1.05);
+        }
+
+        .tarjeta h2 {
+            margin: 18px 18px 8px;
+            font-size: 23px;
+        }
+
+        .tarjeta p {
+            margin: 0 18px 22px;
+            line-height: 1.5;
+        }
+
+        /* PIE */
+
+        footer {
+            background: #5a281b;
+            color: white;
+            text-align: center;
+            padding: 25px;
+            margin-top: 50px;
+        }
+
+        /* TABLET */
+
+        @media(max-width: 900px) {
+
+            header {
+                flex-direction: column;
+                gap: 18px;
+            }
+
+            .tarjetas {
+                grid-template-columns: 1fr 1fr;
+            }
+        }
+
+        /* CELULAR */
+
+        @media(max-width: 550px) {
+
+            .logo img {
+                width: 70px;
+                height: 70px;
+            }
+
+            .nombre-logo span,
+            .nombre-logo strong {
+                font-size: 23px;
+            }
+
+            nav ul {
+                gap: 15px;
+            }
+
+            nav a {
+                font-size: 14px;
+            }
+
+            .productos h1 {
+                font-size: 35px;
+            }
+
+            .tarjetas {
+                grid-template-columns: 1fr;
+            }
+        }
+
+    </style>
+
+</head>
+
+<body>
+
+
+<!-- ENCABEZADO -->
+
+<header>
+
+    <div class="logo">
+
+        <img src="img/logo.png" alt="Logo Helados Donamy">
+
+        <div class="nombre-logo">
+            <span>Helados</span>
+            <strong>Donamy</strong>
+        </div>
+
+    </div>
+
+
+    <nav>
+        <ul>
+            <li><a href="index.html">Inicio</a></li>
+            <li><a href="productos.html">Productos</a></li>
+            <li><a href="contacto.html">Contacto</a></li>
+        </ul>
+    </nav>
+
+</header>
+
+
+<!-- PRODUCTOS -->
+
+<section class="productos">
+
+    <h1>Nuestros productos</h1>
+
+    <p>
+        Conoce algunos de los sabores y productos
+        que tenemos en Helados Donamy.
+    </p>
+
+
+    <div class="tarjetas">
+
+        <div class="tarjeta">
+
+            <img src="img/paletas_crema2.png"
+                 alt="Paletas de crema">
+
+            <h2>Paletas de crema</h2>
+
+            <p>
+                Paletas elaboradas con crema de leche
+                en diferentes sabores y combinaciones.
+            </p>
+
+        </div>
+
+
+        <div class="tarjeta">
+
+            <img src="img/paleta_especial.png"
+                 alt="Paletas especiales">
+
+            <h2>Paletas especiales</h2>
+
+            <p>
+                Diferentes combinaciones de sabores
+                para disfrutar algo especial.
+            </p>
+
+        </div>
+
+
+        <div class="tarjeta">
+
+            <img src="img/sandwiches.png"
+                 alt="Sándwiches de helado">
+
+            <h2>Sándwiches de helado</h2>
+
+            <p>
+                Helado cremoso entre galletas,
+                disponible en diferentes sabores.
+            </p>
+
+        </div>
+
+
+        <div class="tarjeta">
+
+            <img src="img/mas_sabores.png"
+                 alt="Más sabores">
+
+            <h2>Más sabores</h2>
+
+            <p>
+                Contamos con diferentes opciones
+                para que puedas elegir tu favorita.
+            </p>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<footer>
+
+    <p>
+        © 2026 Helados Donamy. Todos los derechos reservados.
+    </p>
+
+</footer>
+
+
+</body>
+</html>

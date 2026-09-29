@@ -1,0 +1,322 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Contacto - Helados Donamy</title>
+
+    <style>
+
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background: #fffaf7;
+            color: #4b2318;
+        }
+
+
+        /* ENCABEZADO */
+
+        header {
+            width: 100%;
+            background: white;
+            padding: 15px 7%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom: 4px solid #ff7eaa;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 14px;
+        }
+
+        .logo img {
+            width: 90px;
+            height: 90px;
+            object-fit: cover;
+            border-radius: 50%;
+        }
+
+        .nombre-logo {
+            display: flex;
+            align-items: center;
+            gap: 7px;
+        }
+
+        .nombre-logo span {
+            font-size: 30px;
+            font-weight: bold;
+            color: #ed3f78;
+        }
+
+        .nombre-logo strong {
+            font-size: 30px;
+            color: #5b281d;
+        }
+
+
+        /* MENÚ */
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            gap: 30px;
+            margin: 0;
+            padding: 0;
+        }
+
+        nav a {
+            text-decoration: none;
+            color: #4b2318;
+            font-size: 17px;
+            font-weight: bold;
+        }
+
+        nav a:hover {
+            color: #ed3f78;
+        }
+
+
+        /* CONTACTO */
+
+        .contacto {
+            min-height: 550px;
+            background: #ffd8e4;
+            padding: 70px 8%;
+            text-align: center;
+        }
+
+        .contacto h1 {
+            font-size: 45px;
+            margin: 0 0 10px;
+        }
+
+        .contacto > p {
+            font-size: 19px;
+            margin-bottom: 55px;
+        }
+
+        .datos {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 35px;
+        }
+
+        .dato {
+            padding: 25px 15px;
+        }
+
+        .dato h2 {
+            font-size: 23px;
+            margin-bottom: 15px;
+        }
+
+        .dato p {
+            font-size: 17px;
+            line-height: 1.5;
+        }
+
+
+        /* FOOTER */
+
+        footer {
+            width: 100%;
+            background: #5a281b;
+            color: white;
+            text-align: center;
+            padding: 28px;
+        }
+
+        footer p {
+            margin: 8px;
+        }
+
+        footer a {
+            color: #ffd0df;
+            text-decoration: none;
+            margin: 0 8px;
+        }
+
+        footer a:hover {
+            color: white;
+            text-decoration: underline;
+        }
+
+
+        /* TABLET */
+
+        @media(max-width: 900px) {
+
+            header {
+                flex-direction: column;
+                gap: 18px;
+            }
+
+            .datos {
+                grid-template-columns: 1fr 1fr;
+            }
+        }
+
+
+        /* CELULAR */
+
+        @media(max-width: 550px) {
+
+            .logo img {
+                width: 70px;
+                height: 70px;
+            }
+
+            .nombre-logo span,
+            .nombre-logo strong {
+                font-size: 23px;
+            }
+
+            nav ul {
+                gap: 15px;
+            }
+
+            nav a {
+                font-size: 14px;
+            }
+
+            .contacto {
+                padding: 45px 6%;
+            }
+
+            .contacto h1 {
+                font-size: 35px;
+            }
+
+            .datos {
+                grid-template-columns: 1fr;
+                gap: 10px;
+            }
+        }
+
+    </style>
+
+</head>
+
+
+<body>
+
+
+<!-- ENCABEZADO -->
+
+<header>
+
+    <div class="logo">
+
+        <img src="img/logo.png"
+             alt="Logo Helados Donamy">
+
+        <div class="nombre-logo">
+            <span>Helados</span>
+            <strong>Donamy</strong>
+        </div>
+
+    </div>
+
+
+    <nav>
+        <ul>
+            <li><a href="index.html">Inicio</a></li>
+            <li><a href="productos.html">Productos</a></li>
+            <li><a href="contacto.html">Contacto</a></li>
+        </ul>
+    </nav>
+
+</header>
+
+
+<!-- CONTACTO -->
+
+<section class="contacto">
+
+    <h1>Contacto rápido</h1>
+
+    <p>¡Te esperamos en Helados Donamy!</p>
+
+
+    <div class="datos">
+
+
+        <div class="dato">
+
+            <h2>Dirección</h2>
+
+            <p>
+                Próximamente
+            </p>
+
+        </div>
+
+
+        <div class="dato">
+
+            <h2>Horario</h2>
+
+            <p>
+                Consulta nuestro horario de atención
+            </p>
+
+        </div>
+
+
+        <div class="dato">
+
+            <h2>Teléfono</h2>
+
+            <p>
+                Próximamente
+            </p>
+
+        </div>
+
+
+        <div class="dato">
+
+            <h2>Redes sociales</h2>
+
+            <p>
+                Facebook · Próximamente en más redes
+            </p>
+
+        </div>
+
+
+    </div>
+
+</section>
+
+
+<!-- PIE DE PÁGINA -->
+
+<footer>
+
+    <p>
+        © 2026 Helados Donamy.
+        Todos los derechos reservados.
+    </p>
+
+    <p>
+        <a href="#">Facebook</a>
+        |
+        <a href="#">Instagram</a>
+    </p>
+
+</footer>
+
+
+</body>
+</html>
